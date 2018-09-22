@@ -1,4 +1,5 @@
 const WebpackShellPlugin = require('webpack-shell-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 var plugins = [];
@@ -7,8 +8,14 @@ var plugins = [];
 // compile the src c++ files into this directory
 // outputs a .js and .wasm file
 plugins.push(new WebpackShellPlugin({
-  onBuildStart: ['mkdir -p dist/cpp', 'em++ ./src/cpp/helloworld.cpp -o dist/cpp/hellowrld.js'],
+  // onBuildStart: ['mkdir -p dist/cpp', 'em++ ./src/cpp/emscripten.cpp -o dist/cpp/appWASM.js'],
+  onBuildStart: ['mkdir -p dist/cpp', 'emcc --bind -o dist/cpp/appWASM.js src/cpp/emscripten.cpp'],
   onBuildEnd: ['echo "Ending"']
+}));
+
+plugins.push(new HtmlWebpackPlugin({
+  template:'src/index.html',
+  hash:true
 }));
 
 var config = {

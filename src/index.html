@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Webpack App</title>
+  </head>
+  <body>
+  <script>
+  window.addEventListener("wasmLoaded", () => {
+        console.log("wasm loaded")
+        console.log(Module);
+        console.log('result  ' + Module.addTwo(1,2));
+        // console.log("WASM : addTwo(2, 2) = ", Module.ccall("addTwo", ["number"], ["number", "number"], [2, 2]))
+        // console.log("WASM : addThree(1, 2, 3) = ", Module.ccall("addThree", ["number"], ["number", "number", "number"], [1, 2, 3]))
+        // console.log("WASM : multTwo(3, 4) = ", Module.ccall("multTwo", ["number"], ["number", "number"], [3, 4]))
+  })
+  // var Module = {
+  //   onRuntimeInitialized: function() {
+  //     console.log('result: ' + Module.addTwo(1, 2));
+  //   }
+  // };
+  </script>
+  <script src="cpp/appWASM.js"></script>
+</body>
+</html>

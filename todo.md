@@ -4,3 +4,11 @@
 4. Set up server to run -- webpack python simple server in dist directory?
 5. Look into can we add watching to recompile files
 6. write readme
+
+
+
+
+//  look at all the files in src/cpp
+//  get the names
+//  run compile and output with same names to dist/cpp
+//  then import the dist/cpp/name.js files into index file  with the normal js
