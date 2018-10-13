@@ -1,4 +1,7 @@
 package-lock.json
 
-node_modules/ 
+node_modules/
 dist/
+src/cpp/test.bc
+src/cpp/.o
+src/cpp/.d

@@ -9,7 +9,8 @@ var plugins = [];
 // outputs a .js and .wasm file
 plugins.push(new WebpackShellPlugin({
   // onBuildStart: ['mkdir -p dist/cpp', 'em++ ./src/cpp/emscripten.cpp -o dist/cpp/appWASM.js'],
-  onBuildStart: ['mkdir -p dist/cpp', 'emcc --bind -o dist/cpp/appWASM.js src/cpp/emscripten.cpp'],
+  // onBuildStart: ['', 'mkdir -p dist/cpp', 'emcc --bind -o dist/cpp/appWASM.js src/cpp/test.bc'],
+  onBuildStart: ['./run.sh'],
   onBuildEnd: ['echo "Ending"']
 }));
 

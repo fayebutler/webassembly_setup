@@ -1,31 +1,9 @@
 #include <stdio.h>
 #include <emscripten.h>
 #include <emscripten/bind.h>
-// #include "app.h"
+#include "app.h"
 
 using namespace emscripten;
-
-
-class Util {
-  public:
-    static int addTwo (int a, int b);
-    static int addThree (int a, int b, int c);
-    static int multTwo (int a, int b);
-};
-
-
-
-int Util::addTwo (int a, int b) {
-    return a + b;
-}
-
-int Util::addThree (int a, int b, int c) {
-    return a + b + c;
-}
-
-int Util::multTwo (int a, int b) {
-    return a * b ;
-}
 
 
 int main(int argc, char const *argv[]) {
